@@ -3,8 +3,8 @@ from typing import List
 
 class Settings(BaseSettings):
     # Gmail
-    GMAIL_CREDENTIALS_FILE: str = "credentials.json"
-    GMAIL_TOKEN_FILE: str = "token.json"
+    GMAIL_CREDENTIALS_FILE: str = "../secrets/credentials.json"
+    GMAIL_TOKEN_FILE: str = "../secrets/token.json"
     GMAIL_SCOPES: List[str] = ['https://www.googleapis.com/auth/gmail.modify']
     
     # Database
