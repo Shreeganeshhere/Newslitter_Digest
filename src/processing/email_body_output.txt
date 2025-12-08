@@ -1,0 +1,529 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="x-apple-disable-message-reformatting"><title>TLDR Data</title><meta name="color-scheme" content="light dark"><meta name="supported-color-schemes" content="light dark"><style type="text/css">
+			:root {
+				color-scheme: light dark; supported-color-schemes: light dark;
+			}
+			
+			*,
+			*:after,
+			*:before {
+				-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+			}
+			
+			* {
+				-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+			}
+			
+			html,
+			body,
+			.document {
+				width: 100% !important; height: 100% !important; margin: 0; padding: 0;
+			}
+			
+			body {
+				-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;
+			}
+			
+			div[style*="margin: 16px 0"] {
+				margin: 0 !important;
+			}
+			
+			table,
+			td {
+				mso-table-lspace: 0pt; mso-table-rspace: 0pt;
+			}
+			
+			table {
+				border-spacing: 0; border-collapse: collapse; table-layout: fixed; margin: 0 auto;
+			}
+			
+			img {
+				-ms-interpolation-mode: bicubic; max-width: 100%; border: 0;
+			}
+			
+			*[x-apple-data-detectors] {
+				color: inherit !important; text-decoration: none !important;
+			}
+			
+			.x-gmail-data-detectors,
+			.x-gmail-data-detectors *,
+			.aBn {
+				border-bottom: 0 !important; cursor: default !important;
+			}
+			
+			.btn {
+				-webkit-transition: all 200ms ease; transition: all 200ms ease;
+			}
+			
+			.btn:hover {
+				background-color: #f67575; border-color: #f67575;
+			}
+			
+			* {
+				font-family: Arial, Helvetica, sans-serif; font-size: 18px;
+			}
+			
+			@media screen and (max-width: 600px) {
+				.container {
+					width: 100%; margin: auto;
+				}
+				.stack {
+					display: block!important; width: 100%!important; max-width: 100%!important;
+				}
+				.btn {
+					display: block; width: 100%; text-align: center;
+				}
+			}
+			
+			body,
+			p,
+			td,
+			tr,
+			.body,
+			table,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			div,
+			span {
+				background-color: #FEFEFE !important; color: #010101 !important;
+			}
+			
+			@media (prefers-color-scheme: dark) {
+				body,
+				p,
+				td,
+				tr,
+				.body,
+				table,
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6,
+				div,
+				span {
+					background-color: #27292D !important; color: #FEFEFE !important;
+				}
+			}
+			
+			a {
+				color: inherit !important; text-decoration: underline !important;
+			}
+
+		</style><!--[if mso | ie]>
+		<style type="text/css">
+			a {
+				background-color: #FEFEFE !important; color: #010101 !important;
+			}
+			@media (prefers-color-scheme: dark) {
+				a {
+					background-color: #27292D !important; color: #FEFEFE !important;
+				}
+			}
+	 </style>
+			<![endif]--></head><body class="">
+
+
+
+<div style="display: none; max-height: 0px; overflow: hidden;">Costly S3 mistakes with Delta Lake include enabling object versioning, misusing archival storage classes, and routing traffic through NAT Gateways&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+
+<div style="display: none; max-height: 0px; overflow: hidden;">
+<br>
+</div>
+
+<table align="center" class="document"><tbody><tr><td valign="top">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="container" width="600"><tbody><tr class="inner-body"><td>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr class="header"><td bgcolor="" class="container">
+
+<table width="100%"><tbody><tr><td class="container">
+
+
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" style="margin-top: 0px;" width="100%"><tbody><tr><td style="padding: 0px;">
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div style="text-align: center;">
+<span style="margin-right: 0px;"><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdata%3Futm_source=tldrdata/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/k-JXI_BqCrBkkxqhoLMdIW4l76bDH4Qrphw9CZ4wEpE=434" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span style="margin-right: 2px; margin-left: 2px;"><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%3Futm_source=tldrdata%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/BbkbNlaG7d3uTe5Ugb6q4LWka4Ddwr57edbZF6E5sko=434" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span style="margin-left: 2px;"><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=9a4ced62-9000-11f0-b773-9be8260385a0%26p=dfc09450-d3e6-11f0-acc3-c1ff02af35d5%26pt=campaign%26t=1765192368%26s=4061f356f7b089fcabd0bb77246586785d827bd1379235a8183ecf0fd94d35c0/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/pD42etz8t2-T8D1QH7Z024PaoaXpq8UzLdpoveRtEEg=434"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="text-align: center;"><span data-darkreader-inline-color="" style="--darkreader-inline-color:#3db3ff; color: rgb(51, 175, 255) !important; font-size: 30px;">T</span><span style="font-size: 30px;"><span data-darkreader-inline-color="" style="color: rgb(232, 192, 96) !important; --darkreader-inline-color:#e8c163; font-size:30px;">L</span><span data-darkreader-inline-color="" style="color: rgb(101, 195, 173) !important; --darkreader-inline-color:#6ec7b2; font-size:30px;">D</span></span><span data-darkreader-inline-color="" style="--darkreader-inline-color:#dd6e6e; color: rgb(220, 107, 107) !important; font-size: 30px;">R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody></tbody></table>
+
+
+<table style="table-layout: fixed; width:100%;" width="100%"><tbody><tr><td style="padding:0;border-collapse:collapse;border-spacing:0;margin:0;">
+<div style="text-align: center;">
+
+<h1><strong>TLDR Data <span id="date">2025-12-08</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table style="table-layout: fixed; width:100%;" width="100%"><tbody></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr bgcolor=""><td class="container">
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td style="padding: 0px;">
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="text-block">
+<div style="text-align: center;"><span style="font-size: 36px;">📱</span></div></div>
+</td></tr></tbody></table>
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="text-block">
+<div style="text-align: center;">
+
+<h1><strong>Deep Dives</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table style="table-layout: fixed; width: 100%;" width="100%"><tbody><tr><td style="padding:0;border-collapse:collapse;border-spacing:0;margin:0;" valign="top">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block">
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.databricks.com%2Fblog%2Fexpensive-delta-lake-s3-storage-mistakes-and-how-fix-them%3Futm_source=tldrdata/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/ff1Sc3GsdbL9Q57X2KaWYUpMxUfuRyCYeM5b717cKdw=434">
+                                    <span>
+                                        <strong>Expensive Delta Lake S3 Storage Mistakes (And How to Fix Them) (12 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;">
+                                    Costly S3 mistakes with Delta Lake include enabling object versioning, misusing archival storage classes, routing traffic through NAT Gateways, and transitioning active files to infrequent-access tiers. Proper configuration prevents these issues and significantly reduces storage and data transfer costs.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block">
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faiven.io%2Fblog%2Fbenchmarking-diskless-inkless-topics-part-1%3Futm_source=tldrdata/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/l2NAiPTwAKR3rM4nLGiVxI1tFMGhHyAJRRlITqAj6-E=434">
+                                    <span>
+                                        <strong>Benchmarking Diskless Topics: Part 1 (11 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;">
+                                    Benchmarks of Apache Kafka's KIP-1150 Diskless Topics on Aiven demonstrated sustained 1 GiB/s ingest and 3 GiB/s egress across three AZs using only six m8g.4xlarge nodes at &lt;30% CPU, achieving ~1.6 s P99 end-to-end latency and over 94% infrastructure cost reduction (from ≈$3.32 M to under $288k per year) for typical multi-AZ workloads. Tradeoffs include minor increases in cross-AZ metadata traffic and higher JVM heap, but with negligible impact compared to savings in disk and replication costs. Open-source benchmarks and configs are available for reproducibility.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="text-block">
+<div style="text-align: center;"><span style="font-size: 36px;">🚀</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="text-block">
+<div style="text-align: center;">
+
+<h1><strong>Opinions &amp; Advice</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table style="table-layout: fixed; width: 100%;" width="100%"><tbody><tr><td style="padding:0;border-collapse:collapse;border-spacing:0;margin:0;" valign="top">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block">
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FuA6xjY/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/UpyXlgqCyit6LiSpHFoEVITBxAc5b6gnaK5vqamKaFo=434">
+                                    <span>
+                                        <strong>Duplication Isn't Always an Anti-Pattern (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;">
+                                    Duplication is not always an anti-pattern: over-abstraction and shared dependencies often create tighter coupling, higher cognitive load, and harder changes. For data engineers, it is usually better to duplicate data models, Kafka topics, or business logic when ownership or context differs, while centralizing only truly universal utilities and repositories. Controlled duplication improves isolation, reduces blast radius, and makes systems easier to evolve over time.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block">
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FPhtq3h/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/DApksUfq3ooLv2ZwgiIA1a8yJlZY3AxSsqu7T94o_HM=434">
+                                    <span>
+                                        <strong>Why We Built “BlaBlaCar Data Copilot”: Shifting Data Analysis Left (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;">
+                                    Data Copilot is an AI-driven IDE extension that empowers software engineers to perform data analysis directly in their coding environment. It eliminates reliance on BI consoles and reduces organizational silos. Featuring business-specific curated queries, transparent SQL/Python code generation, and heuristic Data Health Cards, Data Copilot enforces analytics best practices and unit testing earlier in the cycle. This accelerates domain team autonomy by operationalizing Data Mesh principles while allowing for centralization of results. The tool is open source, and the code base is linked in the article.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block">
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fthenewstack.io%2Fwhen-to-log-and-when-to-shut-up%2F%3Futm_source=tldrdata/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/qNXaDRKOjk95bl39sbuDulfYpelEpVaOjRdjAfFijq0=434">
+                                    <span>
+                                        <strong>When To Log, and When To Shut Up (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;">
+                                    Logging indiscriminately generates vast volumes of costly, low-value data, hindering effective root cause analysis and inflating operational spend. Prioritize structured, contextual logs, and reserve logs for information that's truly actionable or irreducible to metrics and traces. Prestructured logging enables efficient aggregation and rapid analytics, reducing query latency from minutes to milliseconds. Intentional, well-scoped logging maximizes observability and minimizes noise and vendor costs.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="text-block">
+<div style="text-align: center;"><span style="font-size: 36px;">💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="text-block">
+<div style="text-align: center;">
+
+<h1><strong>Launches &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table style="table-layout: fixed; width: 100%;" width="100%"><tbody><tr><td style="padding:0;border-collapse:collapse;border-spacing:0;margin:0;" valign="top">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block">
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fgboeing%2Fosmnx%3Futm_source=tldrdata/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/Ijl8fyOCtWNm7bUvBK80ZEqjCl3sC73oudX58Hyj2vo=434">
+                                    <span>
+                                        <strong>OSMnx (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;">
+                                    OSMnx is a Python library for quickly downloading, modeling, and analyzing street networks and urban geospatial data from OpenStreetMap. It provides a robust, open-source way for data engineers to integrate network-based geospatial data into analysis and pipelines with minimal setup.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block">
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fflink.apache.org%2F2025%2F12%2F04%2Fapache-flink-2.2.0-advancing-real-time-data--ai-and-empowering-stream-processing-for-the-ai-era%2F%3Futm_source=tldrdata/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/3cTzR6txw8xlgg5XgFjWXLQXvdNcizYC--EilvuPdHw=434">
+                                    <span>
+                                        <strong>Apache Flink 2.2.0: Advancing Real-Time Data + AI and Empowering Stream Processing for the AI Era (14 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;">
+                                    Apache Flink 2.2.0 introduces seamless real-time AI integration, with built-in ML_PREDICT for LLM inference and VECTOR_SEARCH for streaming vector similarity, directly enabling advanced streaming AI workflows. Major enhancements include materialized tables, improved Delta Joins, balanced task scheduling, smarter connectors, optimized PyFlink async support, and upgrades to protobuf-java 4.32.1.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block">
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fdataopsleadership.substack.com%2Fp%2Fwhat-is-state-aware-orchestration%3Futm_source=tldrdata/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/vy04-bhH2mh5pbwl9A4bZ8wbodUHXJGc58hJHRWx8-0=434">
+                                    <span>
+                                        <strong>What is State Aware Orchestration and when should you (not) care? (11 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;">
+                                    State-aware orchestration stores metadata about processed data so pipelines only run when new data arrives, reducing costs and complexity. While dbt Cloud markets this as novel, similar concepts exist in Spark, Iceberg, and other frameworks. It's most valuable for teams with 1,000+ models, many schedules, and unreliable data delivery. However, with good end-to-end orchestration, incremental models, and reliable data sources, traditional scheduling may suffice.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="text-block">
+<div style="text-align: center;"><span style="font-size: 36px;">🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="text-block">
+<div style="text-align: center;"><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table bgcolor="" style="table-layout: fixed; width: 100%;" width="100%"><tbody><tr><td style="padding:0;border-collapse:collapse;border-spacing:0;margin:0;" valign="top">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block">
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FFinTsQ/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/dy4xx5Lagg6OXBbunD2NduyXXCFxufnNWFJ0XS8ef9Q=434">
+                                    <span>
+                                        <strong>Autonomous Observability at Pinterest (10 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;">
+                                    Pinterest replaced fragmented observability with a unified Model Context Protocol (MCP) server, giving AI agents like Tricorder single-point access to metrics (3B/min), logs/traces (7TB/day), alerts, changefeeds, and dependency graphs. This enabled autonomous correlation, faster root-cause analysis, and lower MTTR. It sets the stage for future LLM-driven issue resolution.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block">
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fkb.databasedesignbook.com%2Fposts%2Fsql-joins%2F%3Futm_source=tldrdata/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/rmBrcisCa8_V8r-j-hxqFbTRvVt-wvREpH2tZZqJiDs=434">
+                                    <span>
+                                        <strong>A Modern Guide to SQL JOINs (18 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;">
+                                    LEFT JOIN with ID-only ON clauses forms the core foundation for SQL JOINs, preserving left-table rows and cleanly handling N:1 and 1:N relationships (with NULLs where needed). INNER JOIN is a filtered Cartesian product. Best practices include explicit aliases, N:1 join order for performance, nested-loop thinking, moving non-ID filters to WHERE, and avoiding Venn diagrams and non-equality ON conditions.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="text-block">
+<div style="text-align: center;"><span style="font-size: 36px;">⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="text-block">
+<div style="text-align: center;">
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table bgcolor="" style="table-layout: fixed; width: 100%;" width="100%"><tbody><tr><td style="padding:0;border-collapse:collapse;border-spacing:0;margin:0;" valign="top">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block">
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2F9Gh8kc/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/lSJNQwKBenIB154wPPAmT0Z-zGrSaqpqXZ3w4ybYuOk=434">
+                                    <span>
+                                        <strong>Beyond the Context Window: A New Approach to Summarizing Big Data (7 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;">
+                                    Flipkart's XL-OPSUMM summarizes large review datasets by chunking inputs and tracking aspect-level sentiment, enabling summarization beyond LLM context limits.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block">
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.infoq.com%2Fnews%2F2025%2F12%2Faws-lambda-durable-functions%2F%3Futm_source=tldrdata/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/sAPzmvBc9EFqBslx1xbCkdQEFSlrQvvJ0esFIlXDu0I=434">
+                                    <span>
+                                        <strong>AWS Introduces Durable Functions: Stateful Logic Directly in Lambda Code (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana, sans-serif;">
+                                    AWS Durable Functions for Lambda enable stateful, long-running workflows directly in Lambda code, removing the need for Step Functions.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+
+
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td align="left" style="word-break: break-word; vertical-align: top; padding: 5px 10px;">
+
+<p style="padding: 0; margin: 0; font-size: 22px; color: #000000; line-height: 1.6; font-weight: bold;">
+Want to advertise in TLDR? 📰
+</p>
+<div class="text-block" style="margin-top: 10px;">
+If your company is interested in reaching an audience of data engineering professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdata%26utm_medium=newsletter%26utm_campaign=advertisecta/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/mkJrKx5G2d6qvVi3yNEvFS7i7gN4RviKtSCDA3qwkqU=434"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p style="padding: 0; margin: 0; font-size: 22px; color: #000000; line-height: 1.6; font-weight: bold;">
+Want to work at TLDR? 💼
+</p>
+<div class="text-block" style="margin-top: 10px;">
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/hHGdhD0n-YKu-mERqYu9dittqDATmJNoplSBcF2M3tg=434" rel="noopener noreferrer" style="color: #0000EE; text-decoration: underline;" target="_blank"><strong>Apply here</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech" style="color: #0000EE; text-decoration: underline;">jobs@tldr.tech</a> and get $1k if we hire them!
+</div>
+<br>
+
+<div class="text-block">
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fjoelvanveluwen%2F/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/lT7DKtBgJAP9hzPrOosxiql6z_msP5dplhuUiIMrc4w=434"><span>Joel Van Veluwen</span></a>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fjennytzurueyching%2F/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/1zb705e54hKfz6YU7L7n91rQIwskF5CVNXwFHsVv2wI=434"><span>Tzu-Ruey Ching</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fremi-turpaud%2F/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/pjAuvsWkan65SLrT30_ZMIU3pXaGmlJy-Ngc2BQmmtY=434"><span>Remi Turpaud</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="container" style="padding: 15px 15px;">
+<div class="text-block" id="testing-id">
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdata%2Fmanage%3Femail=newsletter4ganesh%2540gmail.com/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/FJN8glkDmN1i3y_Gjb0ocEnZ-epddPd-c7D09NrM-mM=434">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Data isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=037ede50-92cc-11ee-b0f2-b761aa2217ad%26lc=9a4ced62-9000-11f0-b773-9be8260385a0%26p=dfc09450-d3e6-11f0-acc3-c1ff02af35d5%26pt=campaign%26pv=4%26spa=1765191674%26t=1765192368%26s=034e71475200295339b2203cf439da68c61b30f982fe72e38b831fbc7d3c2471/1/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/686B34yvo-ql6dAJUopngbr8ObjCUrndZ7cFmd3oW2k=434">unsubscribe</a>.
+<br>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/0100019afda9ffea-a336428f-bcf9-4ab4-8778-d650a14afc6e-000000/UP3iFv5Ej8d8-fUvjkMxbq7HP_r-48R2KSBxo1CZ2zw=434" style="display: none; width: 1px; height: 1px;">
+</body></html>
