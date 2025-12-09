@@ -2,6 +2,7 @@ import google.generativeai as genai
 from typing import List, Dict
 import json
 from config.settings import settings
+import re
 
 class NewsletterSummarizer:
     def __init__(self):
@@ -30,12 +31,14 @@ CONTENT:
     
     def _build_prompt(self, content: str) -> str:
         """Create summarization prompt"""
-        return f"""You are curating a daily ML newsletter for students. Extract:
+        return f"""You are a well Known journalist.
+        You are curating a daily ML newsletter that is read by 10,000+ ML practitioners. Extract:
 
 1. **Research**: New papers, models, techniques
 2. **Industry**: Product launches, funding, company news
 3. **Learning**: Tutorials, courses, tools, datasets
-4. **Events**: Conferences, deadlines, webinars
+4. **Events**: Conferences, deadlines, webinars 
+and anything else that is relevant to the ML community.
 
 Input newsletters:
 {content}
@@ -64,3 +67,4 @@ Be concise. Focus on actionable insights for ML students."""
         if json_match:
             return json.loads(json_match.group(1))
         return json.loads(response)
+

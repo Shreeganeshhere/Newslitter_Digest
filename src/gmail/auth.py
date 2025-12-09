@@ -3,8 +3,9 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 import os
-import sys
-sys.path.append('../..') # Adjust the path as necessary to import config.settings
+# import sys
+# sys.path.append('../..')
+# print(sys.path) # Adjust the path as necessary to import config.settings
 from config.settings import settings
 
 class GmailAuthenticator:

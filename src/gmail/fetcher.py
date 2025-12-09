@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from typing import List, Dict, Any
+from typing import List, Dict
 import base64
 from gmail.auth import GmailAuthenticator
 
@@ -18,7 +18,7 @@ class NewsletterFetcher:
         results = self.service.users().messages().list(
             userId='me', 
             q=query,
-            maxResults=50
+            maxResults=1
         ).execute()
         
         messages = results.get('messages', []) # 
@@ -45,48 +45,17 @@ class NewsletterFetcher:
             'date': headers.get('Date', '')
         }
     
-    def _get_body(self, payload: Dict[str, Any]) -> str:
-        """
-        Recursively extract email body, prioritizing text/html over text/plain.
-        """
-        
-        # 1. Check for nested parts (most common for rich emails and attachments)
+    def _get_body(self, payload: Dict) -> str:
+        """Recursively extract email body"""
         if 'parts' in payload:
-            # Prioritize HTML by making a first pass
-            html_data = ""
-            plain_data = ""
-            
             for part in payload['parts']:
-                # Recursively call _get_body if the part is another container (e.g., multipart/alternative)
-                if part['mimeType'].startswith('multipart/'):
-                    # Check for a body in the nested structure
-                    nested_body = self._get_body(part)
-                    if nested_body:
-                        # Return immediately if a body is found in a nested container like multipart/alternative
-                        return nested_body
-                    
-                # If it's a content part, store the data
-                elif part['mimeType'] == 'text/html':
-                    html_data = part['body'].get('data', '')
-                elif part['mimeType'] == 'text/plain':
-                    plain_data = part['body'].get('data', '')
-                    
-            # If we found HTML, decode and return it
-            if html_data:
-                return base64.urlsafe_b64decode(html_data).decode('utf-8')
-            
-            # Otherwise, decode and return the plain text
-            if plain_data:
-                return base64.urlsafe_b64decode(plain_data).decode('utf-8')
-
-        # Check the top-level body (for simple, non-multipart messages)
-        data = payload['body'].get('data', '')
+                if part['mimeType'] == 'text/html':
+                    data = part['body'].get('data', '')
+                    return base64.urlsafe_b64decode(data).decode('utf-8')
         
-        # Decode if data exists
+        data = payload['body'].get('data', '')
         if data:
             return base64.urlsafe_b64decode(data).decode('utf-8')
-        
-        # Return empty string if no body is found
         return ""
     
     def mark_as_read(self, msg_id: str):
