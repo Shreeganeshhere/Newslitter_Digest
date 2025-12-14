@@ -38,6 +38,7 @@ CONTENT:
 2. **Industry**: Product launches, funding, company news
 3. **Learning**: Tutorials, courses, tools, datasets
 4. **Events**: Conferences, deadlines, webinars 
+5. **Developers**: Opinion pieces, blog posts, tutorials, etc.
 and anything else that is relevant to the ML community.
 
 Input newsletters:
@@ -51,14 +52,14 @@ Output as JSON:
     {{
       "title": "🔬 Research Highlights",
       "items": [
-        {{"title": "...", "snippet": "...", "source": "...", "url": "..."}}
+        {{"title": "...", "snippet": "...", "source": "...", "url": "...", "summary": "..." }}
       ]
     }}
   ],
-  "summary": "One paragraph overview"
 }}
 
-Be concise. Focus on actionable insights for ML students."""
+Be concise. Focus on actionable insights and information rich content for ML community.
+Use the summary field to provide a brief 1 or 2 paragraph overview of the item."""
     
     def _parse_response(self, response: str) -> Dict:
         """Parse AI response"""

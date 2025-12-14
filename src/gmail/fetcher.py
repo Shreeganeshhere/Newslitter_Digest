@@ -18,7 +18,7 @@ class NewsletterFetcher:
         results = self.service.users().messages().list(
             userId='me', 
             q=query,
-            maxResults=1
+            maxResults=50
         ).execute()
         
         messages = results.get('messages', []) # 

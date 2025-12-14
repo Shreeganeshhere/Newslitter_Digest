@@ -1,10 +1,19 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, Check } from "lucide-react";
+import { Mail, Check, AlertCircle } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 interface EmailSubscriptionFormProps {
   size?: "default" | "large";
@@ -18,14 +27,13 @@ export default function EmailSubscriptionForm({
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [showDuplicateDialog, setShowDuplicateDialog] = useState(false);
   const { toast } = useToast();
 
   const subscribeMutation = useMutation({
     mutationFn: async (email: string) => {
-      return await apiRequest("/api/subscribers", {
-        method: "POST",
-        body: JSON.stringify({ email }),
-      });
+      const res = await apiRequest("POST", "/api/subscribers", { email });
+      return await res.json();
     },
     onSuccess: () => {
       setIsSubmitted(true);
@@ -36,12 +44,18 @@ export default function EmailSubscriptionForm({
     },
     onError: (error: any) => {
       const errorMessage = error.message || "Failed to subscribe. Please try again.";
-      setError(errorMessage);
-      toast({
-        title: "Subscription failed",
-        description: errorMessage,
-        variant: "destructive",
-      });
+      
+      // Check if it's a duplicate email error
+      if (errorMessage.includes("Email id already exists") || errorMessage.includes("already exists")) {
+        setShowDuplicateDialog(true);
+      } else {
+        setError(errorMessage);
+        toast({
+          title: "Subscription failed",
+          description: errorMessage,
+          variant: "destructive",
+        });
+      }
     },
   });
 
@@ -86,7 +100,35 @@ export default function EmailSubscriptionForm({
   const isLarge = size === "large";
 
   return (
-    <form onSubmit={handleSubmit} className="w-full">
+    <>
+      <AlertDialog open={showDuplicateDialog} onOpenChange={setShowDuplicateDialog}>
+        <AlertDialogContent className="sm:max-w-md">
+          <AlertDialogHeader>
+            <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-destructive/10">
+                <AlertCircle className="w-5 h-5 text-destructive" />
+              </div>
+              <AlertDialogTitle className="text-left">Email Already Exists</AlertDialogTitle>
+            </div>
+            <AlertDialogDescription className="text-left pt-2">
+              Email id already exists. Please use a different email address.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction 
+              onClick={() => {
+                setShowDuplicateDialog(false);
+                setEmail("");
+              }}
+              className="rounded-full"
+            >
+              OK
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      <form onSubmit={handleSubmit} className="w-full">
       <div className={`flex flex-col md:flex-row gap-3 ${isLarge ? 'md:gap-4' : ''}`}>
         <div className="flex-1">
           <div className="relative">
@@ -118,5 +160,6 @@ export default function EmailSubscriptionForm({
         </Button>
       </div>
     </form>
+    </>
   );
 }

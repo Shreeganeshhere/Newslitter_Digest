@@ -4,16 +4,16 @@ import { storage } from "./storage";
 import { insertSubscriberSchema, insertNewsItemSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Subscriber routes
+  // Subscriber routes (stores email in subscribers table)
   app.post("/api/subscribers", async (req, res) => {
     try {
       const data = insertSubscriberSchema.parse(req.body);
       
-      // Check if email already exists
+      // Check if email already exists in subscribers table
       const existing = await storage.getSubscriberByEmail(data.email);
       if (existing) {
         return res.status(400).json({ 
-          error: "This email is already subscribed" 
+          error: "Email id already exists" 
         });
       }
 

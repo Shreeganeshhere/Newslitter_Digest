@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     GMAIL_SCOPES: List[str] = ['https://www.googleapis.com/auth/gmail.modify']
     
     # Database
-    #DATABASE_URL: str
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://postgres:password@localhost:5432/Newslitter")
     
     # AI
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY")
