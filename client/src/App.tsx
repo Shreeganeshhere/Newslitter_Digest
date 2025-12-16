@@ -10,8 +10,10 @@ import NotFound from "@/pages/not-found";
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/spaces" component={Spaces} />
+      {/* Spaces is now the homepage */}
+      <Route path="/" component={Spaces} />
+      {/* Original landing page is now at /home */}
+      <Route path="/subscribe" component={Home} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -1,6 +1,6 @@
 import "dotenv/config";
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
+import { createProxyMiddleware } from "http-proxy-middleware";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
@@ -10,12 +10,25 @@ declare module 'http' {
     rawBody: unknown
   }
 }
-app.use(express.json({
-  verify: (req, _res, buf) => {
-    req.rawBody = buf;
+
+// Skip body parsing for /api routes (proxy handles them)
+app.use((req, res, next) => {
+  if (req.path.startsWith("/api")) {
+    return next();
   }
-}));
-app.use(express.urlencoded({ extended: false }));
+  express.json({
+    verify: (req, _res, buf) => {
+      req.rawBody = buf;
+    }
+  })(req, res, next);
+});
+
+app.use((req, res, next) => {
+  if (req.path.startsWith("/api")) {
+    return next();
+  }
+  express.urlencoded({ extended: false })(req, res, next);
+});
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -47,8 +60,21 @@ app.use((req, res, next) => {
   next();
 });
 
+// Proxy API requests to FastAPI BEFORE setting up any other routes
+app.use(
+  "/api",
+  createProxyMiddleware({
+    target: "http://localhost:8000",
+    changeOrigin: true,
+    pathRewrite: {
+      '^/': '/api/', // Prepend /api since Express strips it
+    },
+  })
+);
+
 (async () => {
-  const server = await registerRoutes(app);
+  const { createServer } = await import("http");
+  const httpServer = createServer(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -62,7 +88,7 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
-    await setupVite(app, server);
+    await setupVite(app, httpServer);
   } else {
     serveStatic(app);
   }
@@ -73,7 +99,8 @@ app.use((req, res, next) => {
   // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || '5000', 10);
   const host = process.env.HOST || 'localhost';
-  server.listen(port, host, () => {
+  httpServer.listen(port, host, () => {
     log(`serving on ${host}:${port}`);
+    log(`API requests proxied to FastAPI at http://localhost:8000`);
   });
 })();

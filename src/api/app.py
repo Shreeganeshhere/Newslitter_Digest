@@ -2,11 +2,12 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from datetime import datetime
-from typing import List
+from typing import List, Optional
 import uvicorn
 
 from database.connection import get_db_session
 from database.repositories import SubscriberRepository, NewsletterRepository, NewsItemRepository
+from database.models import Subscriber, NewsItem
 from scheduler.jobs import NewsletterPipeline
 
 app = FastAPI(title="ML Newsletter API")
@@ -14,11 +15,23 @@ app = FastAPI(title="ML Newsletter API")
 # CORS middleware for development
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5000", "http://localhost:5173"],
+    allow_origins=["http://localhost:5000", "http://localhost:5173", "http://127.0.0.1:5000", "http://127.0.0.1:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Custom exception handler to match frontend error format
+from fastapi.responses import JSONResponse
+from fastapi import Request
+
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request: Request, exc: HTTPException):
+    """Convert FastAPI HTTPException to match frontend error format"""
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"error": exc.detail}
+    )
 
 # Pydantic models for request/response
 from pydantic import BaseModel, EmailStr
@@ -36,11 +49,14 @@ class SubscriberResponse(BaseModel):
 
 class NewsItemResponse(BaseModel):
     id: int
-    title: str
-    summary: str
-    source: str
-    url: str | None
-    publishedAt: datetime
+    newsletterId: Optional[int] = None
+    title: Optional[str] = None
+    snippet: Optional[str] = None
+    category: Optional[str] = None
+    source: Optional[str] = None
+    url: Optional[str] = None
+    imageUrl: Optional[str] = None
+    createdAt: datetime
     
     class Config:
         from_attributes = True
@@ -57,9 +73,10 @@ async def create_subscriber(
     # Check if already subscribed
     existing = session.query(Subscriber).filter_by(email=subscriber_data.email).first()
     if existing:
-        raise HTTPException(status_code=400, detail="This email is already subscribed")
+        raise HTTPException(status_code=400, detail="Email id already exists")
     
     repo.add_subscriber(subscriber_data.email)
+    session.commit()
     subscriber = session.query(Subscriber).filter_by(email=subscriber_data.email).first()
     
     return SubscriberResponse(
@@ -72,16 +89,19 @@ async def create_subscriber(
 async def get_news(session: Session = Depends(get_db_session)):
     """Get all news items for the Spaces page"""
     repo = NewsItemRepository(session)
-    news_items = repo.get_latest(limit=50)
+    news_items = repo.get_latest(limit=100)  # Increased limit to show more items
     
     return [
         NewsItemResponse(
             id=item.id,
+            newsletterId=item.newsletter_id,
             title=item.title,
-            summary=item.snippet,
+            snippet=item.snippet,
+            category=item.category,
             source=item.source,
             url=item.url,
-            publishedAt=item.created_at
+            imageUrl=item.image_url,
+            createdAt=item.created_at
         )
         for item in news_items
     ]

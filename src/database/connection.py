@@ -38,8 +38,7 @@ def init_db():
     """Create all database tables"""
     Base.metadata.create_all(bind=engine)
 
-@contextmanager
-def get_db_session() -> Session:
+def get_db_session():
     """Dependency for FastAPI routes"""
     session = SessionLocal()
     try:

@@ -6,7 +6,10 @@ export default function Header() {
   const [, setLocation] = useLocation();
   
   const scrollToSubscribe = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Go to the landing page (original home) which contains the subscribe form
+    setLocation("/subscribe");
+    // Ensure we start at the top of the page
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -28,7 +31,7 @@ export default function Header() {
               variant="ghost"
               className="rounded-full px-6"
               data-testid="button-spaces"
-              onClick={() => setLocation("/spaces")}
+              onClick={() => setLocation("/")}
             >
               Spaces
             </Button>

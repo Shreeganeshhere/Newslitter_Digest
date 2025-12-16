@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, timestamp, integer } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, timestamp, integer, boolean } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -20,12 +20,14 @@ export type User = typeof users.$inferSelect;
 export const subscribers = pgTable("subscribers", {
   id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
   email: text("email").notNull().unique(),
-  subscribedAt: timestamp("subscribed_at").notNull().defaultNow(),
+  active: boolean("active").notNull().default(true),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 
 export const insertSubscriberSchema = createInsertSchema(subscribers).omit({
   id: true,
-  subscribedAt: true,
+  createdAt: true,
+  active: true, // Omit active since it has a default value
 });
 
 export type InsertSubscriber = z.infer<typeof insertSubscriberSchema>;
@@ -33,15 +35,19 @@ export type Subscriber = typeof subscribers.$inferSelect;
 
 export const newsItems = pgTable("news_items", {
   id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
-  title: text("title").notNull(),
-  summary: text("summary").notNull(),
-  source: text("source").notNull(),
+  newsletterId: integer("newsletter_id"),
+  title: text("title"),
+  snippet: text("snippet"),
+  category: text("category"),
+  source: text("source"),
   url: text("url"),
-  publishedAt: timestamp("published_at").notNull().defaultNow(),
+  imageUrl: text("image_url"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 
 export const insertNewsItemSchema = createInsertSchema(newsItems).omit({
   id: true,
+  createdAt: true,
 });
 
 export type InsertNewsItem = z.infer<typeof insertNewsItemSchema>;
