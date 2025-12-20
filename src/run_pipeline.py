@@ -5,6 +5,7 @@ from graph.pipeline import build_pipeline
 from database.connection import init_db, get_db_session
 from database.repositories import NewsletterRepository, NewsItemRepository
 from processing.formatter import NewsletterFormatter
+from export_to_json import export_news_to_json
 
 
 def save_to_database(summary_json: dict) -> None:
@@ -92,6 +93,14 @@ def main() -> None:
     # Save to PostgreSQL database
     print("Saving to database...")
     save_to_database(summary)
+    
+    # Export to JSON file for static frontend
+    print("Exporting to JSON file for static frontend...")
+    try:
+        export_news_to_json()
+    except Exception as e:
+        print(f"Warning: Failed to export to JSON: {e}")
+    
     print("Pipeline completed successfully!")
 
 

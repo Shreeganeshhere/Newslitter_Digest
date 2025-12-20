@@ -1,25 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NewsletterCard from "@/components/NewsletterCard";
-
-// Match FastAPI's /api/news response shape
-interface NewsItem {
-  id: number;
-  newsletterId?: number | null;
-  title?: string | null;
-  snippet?: string | null;
-  category?: string | null;
-  source?: string | null;
-  url?: string | null;
-  imageUrl?: string | null;
-  createdAt: string;
-}
+import { getDailyDigest, NewsItem } from "@/lib/dailyDigest";
 
 export default function Spaces() {
-  const { data: newsItems = [], isLoading } = useQuery<NewsItem[]>({
-    queryKey: ["/api/news"],
-  });
+  // Use static JSON data instead of API call
+  const newsItems = getDailyDigest();
+  const isLoading = false;
 
   return (
     <div className="min-h-screen flex flex-col bg-background">

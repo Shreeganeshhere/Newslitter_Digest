@@ -38,8 +38,9 @@ def init_db():
     """Create all database tables"""
     Base.metadata.create_all(bind=engine)
 
+@contextmanager
 def get_db_session():
-    """Dependency for FastAPI routes"""
+    """Dependency for FastAPI routes and context manager for direct use"""
     session = SessionLocal()
     try:
         yield session

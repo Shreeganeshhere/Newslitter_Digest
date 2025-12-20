@@ -11,8 +11,8 @@ load_dotenv(ENV_FILE)
 
 class Settings(BaseSettings):
     # Gmail
-    GMAIL_CREDENTIALS_FILE: str = "/Users/shreeganeshnayak/Github-projects/Newslitter_Digest/src/secrets/credentials.json"
-    GMAIL_TOKEN_FILE: str = "/Users/shreeganeshnayak/Github-projects/Newslitter_Digest/src/secrets/token.json"
+    GMAIL_CREDENTIALS_FILE: str = str(BASE_DIR / 'secrets' / 'credentials.json')
+    GMAIL_TOKEN_FILE: str = str(BASE_DIR / 'secrets' / 'token.json')
     GMAIL_SCOPES: List[str] = ['https://www.googleapis.com/auth/gmail.modify']
     
     # Database
