@@ -23,7 +23,7 @@ export default function Header() {
             <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
               <Brain className="w-5 h-5 text-primary" />
             </div>
-            <span className="text-xl font-bold" data-testid="text-logo">ML Insights</span>
+            <span className="text-xl font-bold" data-testid="text-logo">ML Newslitter Digest</span>
           </button>
 
           <div className="flex items-center gap-3">

@@ -165,7 +165,7 @@ export default function NewsletterView({ items }: NewsletterViewProps) {
       {/* Header - Dark Theme */}
       <header className="bg-foreground text-background px-6 py-4">
         <div className="container max-w-7xl mx-auto flex items-center justify-between">
-          <h1 className="text-xl font-bold">ML Insights</h1>
+          <h1 className="text-xl font-bold">ML Newslitter Digest</h1>
           <nav className="flex gap-6 text-sm">
             <button className="hover:opacity-80 transition-opacity">Reply</button>
             <button className="hover:opacity-80 transition-opacity">Forward</button>
@@ -179,7 +179,7 @@ export default function NewsletterView({ items }: NewsletterViewProps) {
         <div className="container max-w-7xl mx-auto px-6 py-8">
           {/* Title Section */}
           <div className="mb-8">
-            <h2 className="text-4xl font-bold mb-2">ML Insights Digest</h2>
+            <h2 className="text-4xl font-bold mb-2">ML Newslitter Digest</h2>
             <p className="text-muted-foreground">
               {currentCategoryItems.length > 0 
                 ? formatDate(currentCategoryItems[0]?.createdAt) 
@@ -304,7 +304,7 @@ export default function NewsletterView({ items }: NewsletterViewProps) {
             <button className="hover:opacity-80 transition-opacity">Subscription Management</button>
           </div>
           <div className="text-xs text-muted-foreground">
-            © 2024 ML Insights. All rights reserved.
+            © 2024 ML Newslitter Digest. All rights reserved.
           </div>
         </div>
       </footer>
