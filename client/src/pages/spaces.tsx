@@ -108,8 +108,45 @@ export default function Spaces() {
     };
   });
 
-  // Combine spotlight tab with category tabs
-  const tabs = [spotlightTab, ...categoryTabs];
+  // Create "All" tab that shows all news items
+  const allTab = {
+    id: "all",
+    label: "All",
+    content: (
+      <div className="space-y-6">
+        <div className="space-y-2">
+          <h3 className="text-2xl font-semibold">All News</h3>
+          <p className="text-muted-foreground">
+            Complete collection of all ML news and updates
+          </p>
+        </div>
+
+        {newsItems.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {newsItems.map((news, index) => (
+              <NewsletterCard
+                key={news.id}
+                id={news.id}
+                title={news.title ?? "Untitled Article"}
+                summary={news.snippet ?? "No description available."}
+                source={news.source ?? "Unknown Source"}
+                url={news.url ?? undefined}
+                publishedAt={news.createdAt}
+                type={index % 3 === 0 ? "code" : "article"}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">No news items available.</p>
+          </div>
+        )}
+      </div>
+    ),
+  };
+
+  // Combine spotlight tab with category tabs and all tab
+  const tabs = [spotlightTab, ...categoryTabs, allTab];
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
