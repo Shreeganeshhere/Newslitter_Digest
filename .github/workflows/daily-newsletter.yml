@@ -30,12 +30,7 @@ jobs:
         run: |
           mkdir -p src/secrets
           echo '${{ secrets.GMAIL_CREDENTIALS_JSON }}' > src/secrets/credentials.json
-
-      - name: Restore Gmail token
-        run: |
-          echo "$GMAIL_TOKEN_BASE64" | base64 -d > src/secrets/token.json
-        env:
-          GMAIL_TOKEN_BASE64: ${{ secrets.GMAIL_TOKEN_BASE64 }}
+          echo '${{ secrets.GMAIL_TOKEN_JSON }}' > src/secrets/token.json
       
       - name: Run newsletter pipeline
         env:
