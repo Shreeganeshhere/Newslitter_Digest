@@ -1,13 +1,29 @@
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NewsletterCard from "@/components/NewsletterCard";
 import PillTabs from "@/components/PillTabs";
-import { getDailyDigest, NewsItem } from "@/lib/dailyDigest";
+import { getDailyDigest } from "@/lib/dailyDigest";
+import { NewsItem } from "@/lib/types";
 
 export default function Spaces() {
-  // Use static JSON data instead of API call
-  const newsItems = getDailyDigest();
-  const isLoading = false;
+  const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadDigest = async () => {
+      try {
+        const data = await getDailyDigest();
+        setNewsItems(data);
+      } catch (error) {
+        console.error("Failed to load daily digest:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadDigest();
+  }, []);
 
   // Create tabs for item1-item5
   const tabs = [

@@ -49,8 +49,10 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add client/src/daily_digest.json
-          git diff --staged --quiet || git commit -m "Update daily digest [skip ci]"
+          # Get today's date for the filename
+          TODAY=$(date +%Y-%m-%d)
+          git add "client/src/digests/${TODAY}.json"
+          git diff --staged --quiet || git commit -m "Update daily digest for ${TODAY} [skip ci]"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
